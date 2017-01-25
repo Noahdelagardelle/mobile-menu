@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".mobile-menu").on("click",function(n){n.preventDefault(),$("nav").toggleClass("active-nav")})});

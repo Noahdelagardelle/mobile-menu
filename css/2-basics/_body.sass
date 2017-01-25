@@ -1,0 +1,93 @@
+header
+  position: fixed
+  width: 100%
+  height: 50px
+  background: lightgray
+  z-index: 100
+  perspective: 1000px
+
+nav
+  line-height: 50px
+  z-index: 10
+
+a
+  text-decoration: none
+  color: white
+
+.container
+  margin: auto
+  overflow: auto
+
+// MOBILE STYLES
+@media only screen and (max-width: 767px)
+  .mobile-menu
+    float: right
+    width: 70px
+    height: 100%
+    background: #999
+    &::after
+      content: 'Menu'
+      text-align: center
+      line-height: 50px
+      width: 100%
+      display: block
+
+  nav
+    opacity: 0
+    pointer-events: none
+    width: 46.875%
+    background: #999
+    position: absolute
+    top: 50px
+    right: 0
+    transition: 300ms ease-in-out
+    -webkit-transform-origin: top
+    transform: rotateX(-90deg)
+    &.active-nav
+      opacity: 1
+      pointer-events: auto
+      transform: rotateX(0deg)
+
+
+  nav a
+    display: block
+    width: 100%
+    height: 50px
+    text-align: center
+
+  .container
+    width: 87.5%
+    // 280 pixels at a 320 pixel screen width (iPhone 3 / 4 / 5)
+
+// TABLET STYLES
+@media only screen and (min-width: 768px) and (max-width: 1023px)
+  .mobile-menu
+    display: none
+
+  nav
+    float: right
+    margin-right: 3.125%
+
+  nav a
+    float: left
+    margin-left: 24px
+
+  .container
+    width: 93.75%
+    // 720 pixels at a 768 pixel screen width (iPads)
+
+// DESKTOP STYLES
+@media only screen and (min-width: 1024px)
+  .mobile-menu
+    display: none
+
+  nav
+    float: right
+
+  nav a
+    float: left
+    margin-right: 30px
+
+  .container
+    // width:95.5%
+    width: 978px
